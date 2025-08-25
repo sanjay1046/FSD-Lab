@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+        x=document.getElementById("a");
+        y=document.getElementById("b");
+        const add = (x, y) => x + y;
+        const subtract = (x, y) => x - y;
+        const multiply = (x, y) => x * y;
+        const divide = (x, y) => {
+            if (y === 0) {
+                throw new Error("Cannot divide by zero");
+            }
+            return x / y;
+        };
+
+    </script>
+    <style>
+        div{
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+    </style>
+</head>
+<body align="center">
+    <div>
+        <h1>Simple Calculator</h1>
+        <p>Perform basic arithmetic operations:</p>
+        <div>
+        <p>Enter a: <input type="number" id="a"></p>
+        <p>Enter b: <input type="number" id="b"></p>
+        <p>Result: <textarea id="result" rows="1" cols="21"></textarea></p><br>
+        </div>
+        <button onclick="document.getElementById('result').innerText = add(Number(a.value), Number(b.value))">Add</button>
+        <button onclick="document.getElementById('result').innerText = subtract(Number(a.value), Number(b.value))">Subtract</button>
+        <button onclick="document.getElementById('result').innerText = multiply(Number(a.value), Number(b.value))">Multiply</button>
+        <button onclick="try { document.getElementById('result').innerText = divide (Number(a.value), Number(b.value)); } catch (error) { document.getElementById('result').innerText = error.message; }">Divide</button>
+    </div>
+</body>
+</html>

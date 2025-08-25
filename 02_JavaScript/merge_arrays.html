@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Arrays</title>
+    <script>
+    let arr1 = [];
+    let arr2 = [];
+    let merged_arr = [];
+
+    const count = () => {
+      console.log("Count:", merged_arr.length);
+    };
+
+    const filter = () => {
+      let fil = parseInt(prompt("Enter a length to filter"));
+      console.log("The elements that have length more than",fil," are: ")
+      for (let i = 0; i < merged_arr.length; i++) {
+        if (merged_arr[i].length > fil) {
+          console.log(merged_arr[i]);
+        }
+      }
+    };
+
+    const mergearrays = () => {
+      arr1 = prompt("Enter first array: ").trim().split(" ");
+      arr2 = prompt("Enter second array: ").trim().split(" ");
+      merged_arr = [...arr1, ...arr2];
+      console.log("Merged Array:", merged_arr);
+      //document.getElementById("merged").innerText = "Merged Array: " + merged_arr.join(", ");
+    };
+
+    window.onload = () => {
+      mergearrays();
+      document.onclick = () => {
+        let value = prompt("Type 'print', 'filter', or 'count'");
+        if (value === "print") {
+          console.log("Printing Merged Array:");
+          for (let i = 0; i < merged_arr.length; i++) {
+            console.log(merged_arr[i]);
+          }
+        } else if (value === "filter") {
+          filter();
+        } else if (value === "count") {
+          count();
+        } else {
+          console.log("Invalid input");
+        }
+      };
+    };
+  </script>
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
